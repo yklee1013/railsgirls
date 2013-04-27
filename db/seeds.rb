@@ -9,4 +9,9 @@
 Identity.create! name: 'admin', email: 'admin@admin.com',
                  password_digest: '$2a$10$gWmU5bzqU4NS.qGFmDuYIeaaCJWyp/1FKsGezCTqt23OEQV1AjQKm',
                  confirmed: true
-User.create! name: 'admin', email: 'admin@admin.com'
+Admin.create! name: 'admin', email: 'admin@admin.com'
+
+Identity.create! name: 'user', email: 'user@user.com',
+                 password_digest: '$2a$10$gWmU5bzqU4NS.qGFmDuYIeaaCJWyp/1FKsGezCTqt23OEQV1AjQKm',
+                 confirmed: true
+User.create! name: 'user', email: 'user@user.com'

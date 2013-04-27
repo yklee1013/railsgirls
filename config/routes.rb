@@ -1,5 +1,7 @@
 RailsGirls::Application.routes.draw do
 
+  get 'admin', to: 'admin#index'
+
   resources :events
   resources :articles
 

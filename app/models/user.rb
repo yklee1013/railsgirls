@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :authentications, allow_destroy: true
 
+  def admin?
+    false
+  end
+
   class << self
     def matches?(request)
       !!request.env['rack.session'][:user_id]

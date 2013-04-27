@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def admin_required
+     redirect_to root_path unless login_required or current_user.admin?
+  end
+
   def login_required
     unauthorized! unless logged_in?
   end
