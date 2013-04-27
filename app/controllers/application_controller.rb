@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
   before_filter :set_locale
 
   helper_method :current_user, :logged_in?
+
+  def store_location
+    session[:return_to] = request.original_url
+  end
 
   def unauthorized!(admin = false)
     session[:return_to] = url_for(params) if !request.xhr?

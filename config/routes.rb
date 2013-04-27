@@ -2,7 +2,15 @@ RailsGirls::Application.routes.draw do
 
   get 'admin', to: 'admin#index'
 
-  resources :events
+  resources :events do
+    member do
+      get 'pair'
+      post 'attend'
+      get 'tutor_attend'
+      get 'girl_attend'
+      get 'participators'
+    end
+  end
   resources :articles
 
   match '/about' => 'home#about', :as => :about

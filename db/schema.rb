@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(:version => 20130427172521) do
     t.string   "email"
     t.string   "name"
     t.string   "type"
-    t.boolean  "attended"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "attended",   :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "event_id"
   end
 

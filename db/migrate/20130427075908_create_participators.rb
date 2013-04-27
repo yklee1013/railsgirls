@@ -4,7 +4,7 @@ class CreateParticipators < ActiveRecord::Migration
       t.string :email
       t.string :name
       t.string :type
-      t.boolean :attended
+      t.boolean :attended, :default => false, :null => false
 
       t.timestamps
     end
