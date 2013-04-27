@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :admin_required, :except => [:index, :show]
-  before_filter :store_location, :only => [:tutor_attend, :girl_attend]
+  before_filter :store_location, :only => [:tutors_attend, :girls_attend]
   # GET /events
   # GET /events.json
   def index
@@ -87,11 +87,11 @@ class EventsController < ApplicationController
 
   end
 
-  def tutor_attend
+  def tutors_attend
     @tutors = Event.find(params[:id]).participators.where :type => Tutor
   end
 
-  def girl_attend
+  def girls_attend
     @girls = Event.find(params[:id]).participators.where :type => Girl
   end
 
@@ -102,11 +102,26 @@ class EventsController < ApplicationController
     redirect_to (session[:return_to] || root_path)
   end
 
+  def girl_attend
+    g = Event.find(params[:id]).participators.find(params[:girl_id])
+    g.attended = true
+    g.save!
+    redirect_to (session[:return_to] || root_path)
+  end
+
   def participators
     participators = Event.find(params[:id]).participators.has_attended
     render json: {
         :girls => participators.select {|p| p.is_a? Girl }.collect {|g| g.name },
         :tutors => participators.select {|p| p.is_a? Tutor }.collect {|g| g.name }
     }
+  end
+
+  def import_csv
+    require 'csv'
+    CSV.foreach params[:csv].tempfile, encoding: 'GB2312:UTF-8' do |row|
+      puts row
+    end
+    redirect_to (session[:return_to] || root_path)
   end
 end

@@ -12,6 +12,7 @@
   <tr>
     <th>昵称</th>
     <th>E-mail</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -19,7 +20,13 @@
     <tr>
       <td><%= t.name %></td>
       <td><%= t.email %></td>
+      <td><%= link_to '签到', girl_attend_event_path(params[:id], { girl_id: t.id}) unless t.attended? %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+<%= form_tag import_csv_event_path(params[:id]), :multipart => true do %>
+  <%= file_field_tag :csv %>
+  <%= submit_tag %>
+<% end %>

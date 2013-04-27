@@ -6,9 +6,11 @@ RailsGirls::Application.routes.draw do
     member do
       get 'pair'
       post 'attend'
-      get 'tutor_attend'
+      get 'tutors_attend'
+      get 'girls_attend'
       get 'girl_attend'
       get 'participators'
+      post 'import_csv'
     end
   end
   resources :articles

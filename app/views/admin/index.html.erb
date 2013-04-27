@@ -40,8 +40,8 @@
         <td><%= link_to event.title, event %></td>
         <td><%= event.city %></td>
         <td><%= event.starts_at %></td>
-        <td><%= link_to 'Girls签到', girl_attend_event_path(event) %></td>
-        <td><%= link_to 'Tutor签到', tutor_attend_event_path(event) %></td>
+        <td><%= link_to 'Girls签到', girls_attend_event_path(event) %></td>
+        <td><%= link_to 'Tutor签到', tutors_attend_event_path(event) %></td>
         <td><%= link_to '配对', pair_event_path(event) %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
