@@ -1,5 +1,7 @@
 RailsGirls::Application.routes.draw do
 
+  get 'admin', to: 'admin#index'
+
   resources :events
   resources :articles
 
@@ -7,6 +9,19 @@ RailsGirls::Application.routes.draw do
   match '/blog' => 'articles#index', :as => :blog
 
   root :to => 'home#index'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
+  post '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/failure', to: 'sessions#new'
+  get '/auth/:provider', to: lambda{|env| [404,{},["Not Found"]]}
+  get '/login', to: 'sessions#new', as: :login
+  get '/logout', to: 'sessions#destroy', as: :logout
+
+  resources :users, only: [:new] do
+    member do
+      get :confirm
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

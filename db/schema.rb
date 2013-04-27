@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427080659) do
+ActiveRecord::Schema.define(:version => 20130427172521) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 20130427080659) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "authentications", :force => true do |t|
+    t.string   "provider",   :limit => 16
+    t.string   "uid",        :limit => 64
+    t.string   "token"
+    t.string   "secret"
+    t.integer  "user_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "authentications", ["provider"], :name => "index_authentications_on_provider"
+  add_index "authentications", ["uid"], :name => "index_authentications_on_uid"
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -30,6 +43,19 @@ ActiveRecord::Schema.define(:version => 20130427080659) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "identities", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "confirmation_code"
+    t.boolean  "confirmed",         :default => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
+
+  add_index "identities", ["confirmation_code"], :name => "index_identities_on_confirmation_code"
+  add_index "identities", ["email"], :name => "index_identities_on_email"
 
   create_table "participators", :force => true do |t|
     t.string   "email"
@@ -44,5 +70,16 @@ ActiveRecord::Schema.define(:version => 20130427080659) do
   add_index "participators", ["email"], :name => "index_participators_on_email"
   add_index "participators", ["event_id"], :name => "index_participators_on_event_id"
   add_index "participators", ["type"], :name => "index_participators_on_type"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "type"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["type"], :name => "index_users_on_type"
 
 end

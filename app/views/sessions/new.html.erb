@@ -1,0 +1,19 @@
+<%= form_tag "/auth/identity/callback", class: "form-horizontal login" do %>
+  <div class="control-group">
+    <label class="control-label" for="identity_email">Email</label>
+    <div class="controls">
+      <input type="text" id="identity_email" name="auth_key" placeholder="Email">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="identity_password">Password</label>
+    <div class="controls">
+      <input type="password" id="identity_password" name="password" placeholder="Password">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button class="btn btn-primary">Log In</button>
+    </div>
+  </div>
+<% end %>

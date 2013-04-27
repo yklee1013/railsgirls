@@ -10,6 +10,10 @@ gem 'settingslogic'
 gem 'rails-i18n'
 gem 'redcarpet'
 gem 'thin'
+gem 'redcarpet'
+gem 'omniauth'
+gem 'omniauth-identity'
+gem 'slim-rails'
 
 group :development do
   gem 'sqlite3'
