@@ -7,6 +7,9 @@ gem 'kaminari'
 gem 'rails_admin'
 gem 'rails_admin_tag_list'
 
+gem 'settingslogic'
+gem 'rails-i18n'
+
 gem 'redcarpet'
 
 group :development do

@@ -1,4 +1,10 @@
 RailsGirls::Application.routes.draw do
+
+  resources :events
+  resources :articles
+
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
