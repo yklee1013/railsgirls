@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="Description" content="Rails Girls China"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/assets/favicon.png">
   
   <title>Rails Girls China</title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -20,10 +23,12 @@
           <span class="icon-bar"></span>
         </a>
 
+        <a class="brand" href="/"></a>
+
         <div class="nav-collapse">
           <ul class="nav pull-left">
             <%= content_tag :li, link_to(t('nav.home'), root_path) -%>
-            <%= content_tag :li, link_to(t('nav.about'),, about_path) -%>
+            <%= content_tag :li, link_to(t('nav.about'), about_path) -%>
             <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
             <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
           </ul>
@@ -35,8 +40,13 @@
   <div class="container">
     <%= render_flash %>
     <section id="content"><%= yield %></section>
-    <footer class="footer">
-    </footer>
   </div>
+
+  <footer>
+    <div class="container">
+      <p class="slogan"><%= t(:slogan) %>
+      <p>2010-2013, Rails Girls China. </p>
+    </div>
+  </footer>
 </body>
 </html>

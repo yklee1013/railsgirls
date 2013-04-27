@@ -1,2 +1,8 @@
-zh-cn:
+zh:
+  nav:
+    home: 主页
+    about: 关于
+    events: 活动
+    blog: 博客
   hello: 'world'
+  slogan: 我们的目标是：没有蛀牙！

@@ -1,0 +1,76 @@
+/*
+ *= require_self
+ *= require twitter/bootstrap
+ */
+
+$bgColor: #D3360B;
+$containerWidth: 940px;
+
+
+#main-nav {
+  .navbar-inner {
+    background: $bgColor;
+
+    .container {
+      width: $containerWidth;
+      padding: 40px 0px 25px 0px;
+      
+      .brand {
+        display: block;
+        width: 200px;
+        height: 30px;
+        background: url('/assets/railsgirls-logo.png') no-repeat;
+        background-position: center;
+        margin-right: 50px;
+      }
+
+      .nav {
+
+        a {
+          color: #ffffff;
+          padding-top: 20px;
+          text-decoration: none;
+          font-weight: 300;
+          font-size: 20px;
+          letter-spacing: 1px;
+          padding-left: 0px;
+
+          &:after {
+            margin-left: 15px;
+            content: url(/assets/star.png);
+          }
+        }
+
+        li:last-child {
+          a:after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#content {
+  margin-top: 3em;
+}
+
+.form-actions {
+  background: transparent;
+  border: none;
+}
+
+footer {
+  color: #666;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  background: #F4F4F4;
+  line-height: 1.5;
+  text-align: center;
+
+  .slogan {
+    font-size: 1.5em;
+    letter-spacing: 0.5em;
+  }
+}

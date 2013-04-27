@@ -3,6 +3,9 @@ RailsGirls::Application.routes.draw do
   resources :events
   resources :articles
 
+  match '/about' => 'home#about', :as => :about
+  match '/blog' => 'articles#index', :as => :blog
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
