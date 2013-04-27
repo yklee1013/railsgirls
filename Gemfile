@@ -4,13 +4,10 @@ gem 'rails', '3.2.13'
 gem 'thin'
 
 gem 'kaminari'
-gem 'rails_admin'
-gem 'rails_admin_tag_list'
-
-gem 'settingslogic'
 gem 'rails-i18n'
-
 gem 'redcarpet'
+gem 'omniauth'
+gem 'omniauth-identity'
 
 group :development do
   gem 'sqlite3'
