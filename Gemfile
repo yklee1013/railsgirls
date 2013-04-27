@@ -10,7 +10,7 @@ gem 'rails_admin_tag_list'
 gem 'redcarpet'
 
 group :development do
-  gem 'sqlite'
+  gem 'sqlite3'
 
   gem 'quiet_assets'
 
