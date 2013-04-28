@@ -15,6 +15,5 @@ table#pairings.table.table-striped
 coffee:
   $("#pairings tr").one 'click', ->
     fn = ->
-      $(@).text($(@).data('nickname')).fadeIn(1000)
-    $(@).find("td.girl span").fadeOut(1000, fn)
-
+      $(@).text($(@).data('nickname')).fadeIn(500)
+    $(@).find("td.girl span").fadeOut(500, fn)
