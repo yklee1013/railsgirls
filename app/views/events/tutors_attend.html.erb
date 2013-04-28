@@ -1,0 +1,25 @@
+<%= form_for Participator.new, url: attend_event_path(params[:id]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :type, :value => 'Tutor' %>
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>昵称</th>
+      <th>E-mail</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @tutors.each do |t| %>
+    <tr>
+      <td><%= t.name %></td>
+      <td><%= t.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

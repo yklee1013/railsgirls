@@ -1,0 +1,32 @@
+<%= form_for Participator.new, url: attend_event_path(params[:id]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :type, :value => 'Girl' %>
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <thead>
+  <tr>
+    <th>昵称</th>
+    <th>E-mail</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @girls.each do |t| %>
+    <tr>
+      <td><%= t.name %></td>
+      <td><%= t.email %></td>
+      <td><%= link_to '签到', girl_attend_event_path(params[:id], { girl_id: t.id}) unless t.attended? %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= form_tag import_csv_event_path(params[:id]), :multipart => true do %>
+  <%= file_field_tag :csv %>
+  <%= submit_tag %>
+<% end %>

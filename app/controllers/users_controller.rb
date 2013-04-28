@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  protect_from_forgery with: :exception
+
   def new
     @identity = request.env['omniauth.identity'] || Identity.new
   end
