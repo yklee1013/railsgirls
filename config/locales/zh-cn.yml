@@ -1,5 +1,5 @@
 zh-CN:
-  time:
+  date:
     formats:
       event: '%Y年%b%d日 %A'
   nav:

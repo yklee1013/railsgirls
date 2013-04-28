@@ -15,9 +15,9 @@ gem 'omniauth'
 gem 'omniauth-identity'
 gem 'slim-rails'
 gem 'rails-i18n'
-gem 'faker'
 
 group :development do
+  gem 'faker'
   gem 'sqlite3'
   gem 'debugger'
   gem 'quiet_assets'

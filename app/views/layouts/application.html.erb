@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="/favicon.ico">
-  <link href='https://fonts.googleapis.com/css?family=Caesar+Dressing' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-  
+
   <title>Rails Girls China</title>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -31,7 +29,7 @@
           <ul class="nav pull-left">
             <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
             <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
-            <%= content_tag :li, link_to(t('nav.about'), about_path) -%>
+            <%#= content_tag :li, link_to(t('nav.about'), about_path) -%>
           </ul>
         </div>
       </div>
