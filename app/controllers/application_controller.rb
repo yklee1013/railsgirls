@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def unauthorized!(admin = false)
     session[:return_to] = url_for(params) if !request.xhr?
-    redirect_to new_session_path
+    redirect_to login_path
   end
 
   def current_user

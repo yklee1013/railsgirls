@@ -36,6 +36,8 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'therubyracer', :platforms => :ruby
+
+  # gem 'therubyracer', :platforms => :ruby
+
   gem 'uglifier', '>= 1.0.3'
 end
