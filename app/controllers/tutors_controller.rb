@@ -1,4 +1,6 @@
 class TutorsController < ApplicationController
+  before_filter :admin_required
+
   def index
     @tutors = Event.find(params[:event_id]).tutors
   end
