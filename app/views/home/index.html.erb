@@ -1,0 +1,32 @@
+<div class='row'>
+  <div class='span12' id="attending">
+    <img class="pull-left" src="/assets/left.png">
+    <div class="pull-left" style="font-family: 'Permanent Marker', cursive;">
+      =&gt;
+    </div>
+    <img class="pull-left" src="/assets/right.png">
+  </div>
+</div>
+
+<div class='row content'>
+  <div class='span7'>
+    <h3><%= t(:get_started_title) %></h3>
+    <p>
+    我们的目标是让女性了解编程技术，为构建自己的创意提供工具与支持。我们会提供丰富的经验以及平易近人的技术，更好的实现你的创意。
+    </p>
+    <p>
+    您将学习到画草图，设计原型，基本的编程知识，并探索科技的技术。 Rails Grils 诞生于芬兰，但时下已经是一个全球性的，非营利性的志愿者社区。
+    </p>    
+  </div>
+  <div class='span5'>
+    <div style='margin-left: 10px;'>
+    <h3><%= t(:upcoming_title) %></h3>
+    <%- @events.each do |e| %>
+      <a href="<%= event_path(e) %>" class="upcoming">
+        <img src="/assets/railsgirls-sq.png" width="50">
+        <h5><%= e.city %><br><span> <%= I18n.l e.starts_at, :format => :event %></span></h5>
+      </a>
+    <%- end %>
+    </div>
+  </div>
+</div>

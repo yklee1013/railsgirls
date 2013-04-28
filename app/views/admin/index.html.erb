@@ -1,0 +1,51 @@
+<div>
+  <h1>Listing articles</h1>
+  <%= link_to 'New Article', new_article_path %>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h1>Listing events</h1>
+  <%= link_to 'New Event', new_event_path %>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>City</th>
+      <th>Starts at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.city %></td>
+        <td><%= event.starts_at %></td>
+        <td><%= link_to 'Girls签到', event_girls_path(event) %></td>
+        <td><%= link_to 'Tutor签到', event_tutors_path(event) %></td>
+        <td><%= link_to '配对', pair_event_path(event) %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

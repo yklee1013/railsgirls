@@ -1,0 +1,19 @@
+#caption data-spy="affix" data-offset-top="100"
+  span {#{image_tag('tutor.png', :class => 'tutor')} :&nbsp;&nbsp;&nbsp;[
+  - 3.times do 
+    = image_tag('girl.png', :class => 'girl')
+  span ]}
+
+table#pairings.table.table-striped
+  tbody
+    - @result.each do |t, girls|
+      tr
+        td.tutor: span = t
+        - girls.each do |g|
+          td.girl: span data-nickname='#{g}' ?
+
+coffee:
+  $("#pairings tr").one 'click', ->
+    fn = ->
+      $(@).text($(@).data('nickname')).fadeIn(500)
+    $(@).find("td.girl span").fadeOut(500, fn)

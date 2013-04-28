@@ -1,0 +1,19 @@
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>City</th>
+    <th>Starts at</th>
+    <th>Summary</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= link_to event.title, event %></td>
+    <td><%= event.city %></td>
+    <td><%= event.starts_at %></td>
+    <td><%= event.summary %></td>
+  </tr>
+<% end %>
+</table>

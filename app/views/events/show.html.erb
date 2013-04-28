@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @event.title %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @event.city %>
+</p>
+
+<p>
+  <b>Map:</b>
+  <%= @event.map %>
+</p>
+
+<p>
+  <b>Starts at:</b>
+  <%= @event.starts_at %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @event.summary %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= markdown @event.body %>
+</p>
+
+<a class='btn.btn-primary' href='<%= pair_event_path(@event) %>'><%= t('.pair') %></a>

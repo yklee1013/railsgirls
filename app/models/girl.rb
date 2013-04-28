@@ -1,0 +1,3 @@
+class Girl < Participator
+
+end

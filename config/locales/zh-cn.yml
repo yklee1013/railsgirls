@@ -1,0 +1,12 @@
+zh-CN:
+  date:
+    formats:
+      event: '%Y年%b%d日 %A'
+  nav:
+    home: 主页
+    about: 关于
+    events: 活动
+    blog: 博客
+  slogan: Get excited and make things!
+  get_started_title: Rails Girls - Get started with tech
+  upcoming_title: 即将举办的活动
