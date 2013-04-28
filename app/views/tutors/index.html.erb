@@ -1,18 +1,17 @@
-<%= form_for Participator.new, url: attend_event_path(params[:id]) do |f| %>
+<%= form_for Tutor.new, url: event_tutors_path(params[:event_id]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :email %>
   <%= f.text_field :email %>
-  <%= f.hidden_field :type, :value => 'Tutor' %>
   <%= f.submit %>
 <% end %>
 
 <table>
   <thead>
-    <tr>
-      <th>昵称</th>
-      <th>E-mail</th>
-    </tr>
+  <tr>
+    <th>昵称</th>
+    <th>E-mail</th>
+  </tr>
   </thead>
   <tbody>
   <% @tutors.each do |t| %>

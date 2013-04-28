@@ -3,13 +3,14 @@ RailsGirls::Application.routes.draw do
   get 'admin', to: 'admin#index'
 
   resources :events do
+    resources :tutors, only: [:index, :create]
+    resources :girls, only: [:index, :create] do
+      member do
+        get 'attend'
+      end
+    end
     member do
       get 'pair'
-      post 'attend'
-      get 'tutors_attend'
-      get 'girls_attend'
-      get 'girl_attend'
-      get 'participators'
       post 'import_csv'
     end
   end

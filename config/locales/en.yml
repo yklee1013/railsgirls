@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      event: '%Y %b %d %A'
+  nav:
+    home: Home
+    about: About
+    events: Events
+    blog: Blog
+  slogan: Get excited and make things!
+  get_started_title: Rails Girls - Get started with tech
+  upcoming_title: Upcoming event

@@ -85,40 +85,7 @@ class EventsController < ApplicationController
   end
 
   def pair
-    @result = {}
-    30.times do
-      @result[Faker::Name.name] = [Faker::Name.name, Faker::Name.name, Faker::Name.name]
-    end
-  end
-
-  def tutors_attend
-    @tutors = Event.find(params[:id]).participators.where :type => Tutor
-  end
-
-  def girls_attend
-    @girls = Event.find(params[:id]).participators.where :type => Girl
-  end
-
-  def attend
-    p =  Event.find(params[:id]).participators.build(params[:participator])
-    p.attended = true
-    p.save!
-    redirect_to (session[:return_to] || root_path)
-  end
-
-  def girl_attend
-    g = Event.find(params[:id]).participators.find(params[:girl_id])
-    g.attended = true
-    g.save!
-    redirect_to (session[:return_to] || root_path)
-  end
-
-  def participators
-    participators = Event.find(params[:id]).participators.has_attended
-    render json: {
-        :girls => participators.select {|p| p.is_a? Girl }.collect {|g| g.name },
-        :tutors => participators.select {|p| p.is_a? Tutor }.collect {|g| g.name }
-    }
+    @result = Event.find(params[:id]).pair
   end
 
   def import_csv
