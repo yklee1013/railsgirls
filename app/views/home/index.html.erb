@@ -22,7 +22,7 @@
     <div style='margin-left: 10px;'>
     <h3><%= t(:upcoming_title) %></h3>
     <%- @events.each do |e| %>
-      <a href="#" class="upcoming">
+      <a href="<%= event_path(e) %>" class="upcoming">
         <img src="/assets/railsgirls-sq.png" width="50">
         <h5><%= e.city %><br><span> <%= I18n.l e.starts_at, :format => :event %></span></h5>
       </a>

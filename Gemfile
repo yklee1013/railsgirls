@@ -14,8 +14,8 @@ gem 'redcarpet'
 gem 'omniauth'
 gem 'omniauth-identity'
 gem 'slim-rails'
-
 gem 'rails-i18n'
+gem 'faker'
 
 group :development do
   gem 'sqlite3'
@@ -23,6 +23,8 @@ group :development do
   gem 'quiet_assets'
   gem 'pry'
   gem 'foreman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Gems used only for assets and not required

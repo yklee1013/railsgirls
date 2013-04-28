@@ -29,3 +29,5 @@
   <b>Body:</b>
   <%= markdown @event.body %>
 </p>
+
+<a class='btn.btn-primary' href='<%= pair_event_path(@event) %>'><%= t('.pair') %></a>

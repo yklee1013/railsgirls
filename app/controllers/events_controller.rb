@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :admin_required, :except => [:index, :show]
+  before_filter :find_event, :only => [:pair]
+  before_filter :admin_required, :except => [:index, :show, :pair]
   before_filter :store_location, :only => [:tutors_attend, :girls_attend]
   # GET /events
   # GET /events.json
@@ -84,7 +85,10 @@ class EventsController < ApplicationController
   end
 
   def pair
-
+    @result = {}
+    30.times do
+      @result[Faker::Name.name] = [Faker::Name.name, Faker::Name.name, Faker::Name.name]
+    end
   end
 
   def tutors_attend
@@ -123,5 +127,10 @@ class EventsController < ApplicationController
       puts row
     end
     redirect_to (session[:return_to] || root_path)
+  end
+
+  private 
+  def find_event
+    @event = Event.find(params[:id])
   end
 end
