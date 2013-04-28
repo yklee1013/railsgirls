@@ -1,4 +1,6 @@
 class GirlsController < ApplicationController
+  before_filter :admin_required
+
   def index
     @girls = Event.find(params[:event_id]).girls
   end

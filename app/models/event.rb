@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
 
   has_many :participators
 
+  scope :upcoming, where("starts_at > #{Date.today}")
+
   def tutors
     participators.where(:type => 'Tutor')
   end

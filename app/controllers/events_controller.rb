@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  before_filter :find_event, :only => [:pair]
   before_filter :admin_required, :except => [:index, :show, :pair]
 
   # GET /events
@@ -94,10 +93,5 @@ class EventsController < ApplicationController
       puts row
     end
     redirect_to (session[:return_to] || root_path)
-  end
-
-  private 
-  def find_event
-    @event = Event.find(params[:id])
   end
 end
