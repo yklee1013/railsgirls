@@ -13,6 +13,8 @@ This application is using for rails girls events, primary for china.
 
 #Development
 
+Rename ```config/database.yml.sample``` to ```config/database.yml```.
+
 Run ```bundle && rake db:migrate && rake db:seed``` first.
 
 Run ```rails s``` to start server.
