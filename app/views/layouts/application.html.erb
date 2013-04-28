@@ -9,43 +9,46 @@
 
   <title>Rails Girls China</title>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="main-nav" class="navbar navbar-static-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
+<div id="main-nav" class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-        <a class="brand" href="<%= root_path %>"></a>
+      <a class="brand" href="<%= root_path %>"></a>
 
-        <div class="nav-collapse">
-          <ul class="nav pull-left">
-            <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
-            <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
-            <%#= content_tag :li, link_to(t('nav.about'), about_path) -%>
-          </ul>
-        </div>
+      <div class="nav-collapse">
+        <ul class="nav pull-left">
+          <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
+          <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
+          <%#= content_tag :li, link_to(t('nav.about'), about_path) -%>
+          <%= content_tag :li, link_to(t('nav.admin'), admin_path) if current_user -%>
+        </ul>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
+  <%= render_flash %>
+  <section id="content"><%= yield %></section>
+</div>
+
+<footer>
   <div class="container">
-    <%= render_flash %>
-    <section id="content"><%= yield %></section>
-  </div>
+    <p class="slogan"><%= t(:slogan) %>
 
-  <footer>
-    <div class="container">
-      <p class="slogan"><%= t(:slogan) %>
-      <p>2010-2013, Rails Girls China. </p>
-    </div>
-  </footer>
+    <p>2010-2013, Rails Girls China. This site is under MIT license and the source code is
+      <a href="https://github.com/railsgirls-china/railsgirls">here</a>.</p>
+  </div>
+</footer>
 </body>
 </html>

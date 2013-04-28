@@ -1,8 +1,8 @@
 RailsGirls::Application.routes.draw do
 
   get 'admin', to: 'admin#index'
-  match 'about' => 'home#about', :as => :about
-  match 'blog' => 'articles#index', :as => :blog
+  get 'about', to: 'home#about', :as => :about
+  get 'blog', to: 'articles#index', :as => :blog
 
   resources :events do
     resources :tutors, only: [:index, :create]
