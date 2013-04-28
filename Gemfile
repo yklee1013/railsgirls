@@ -15,6 +15,8 @@ gem 'omniauth'
 gem 'omniauth-identity'
 gem 'slim-rails'
 
+gem 'rails-i18n'
+
 group :development do
   gem 'sqlite3'
   gem 'debugger'

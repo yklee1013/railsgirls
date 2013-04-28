@@ -74,3 +74,51 @@ footer {
     letter-spacing: 0.5em;
   }
 }
+
+#attending {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  div {
+    font-size: 13em;
+    font-weight: bold;
+    color: #d3360b;
+    margin: 120px 55px 100px 65px;
+  }
+}
+
+.row.content > div {
+  margin-top: 30px;
+  border-top: 4px solid red;
+
+  p {
+    font-size: 17xp;
+  }
+}
+
+.upcoming {
+overflow: auto;
+margin-bottom: 20px;
+display: block;
+border-color: #ccc;
+text-decoration: none;
+border-bottom: 1px dotted #d3360b;
+
+img {
+  float: left;
+margin-right: 15px;
+}
+
+h5{
+margin-top: 0;
+margin-bottom: 20px;
+color: #e0330c;
+line-height: 1.1;
+font-size: 21px;
+}
+
+span {
+  color: #000;
+font-size: 70%;
+}
+}
+
