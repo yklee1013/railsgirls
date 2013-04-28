@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  protect_from_forgery with: :exception
-
   before_filter :logout_required, only: [:new]
 
   def new

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, :only => [:pair]
   before_filter :admin_required, :except => [:index, :show, :pair]
-  before_filter :store_location, :only => [:tutors_attend, :girls_attend]
+
   # GET /events
   # GET /events.json
   def index
