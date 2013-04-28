@@ -60,6 +60,7 @@ $containerWidth: 940px;
 }
 
 footer {
+  margin-top: 50px;
   color: #666;
   overflow: hidden;
   width: 100%;
@@ -81,7 +82,8 @@ footer {
     font-size: 13em;
     font-weight: bold;
     color: #d3360b;
-    margin: 120px 55px 100px 65px;
+    margin: 120px 50px 100px 50px;
+    font-weight: initial;
   }
 }
 
