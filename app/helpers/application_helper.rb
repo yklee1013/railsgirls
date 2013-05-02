@@ -1,8 +1,6 @@
 module ApplicationHelper
   def render_flash
-    unless flash.empty?
-      render(:template => 'shared/_flash', :layout => nil, :locals => {:flash => flash})
-    end
+    render :partial => 'shared/flash', :locals => {:flash => flash} unless flash.empty?
   end
 
   def markdown(text)
