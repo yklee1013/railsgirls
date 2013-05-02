@@ -36,7 +36,8 @@ class GirlsController < ApplicationController
     # csv format: "微博昵称,粉丝数,微博数,真实姓名,联系地址,联系电话,电子邮箱"
     # csv origin encoding: GBK
     # csv separator: comma
-    CSV.open(params[:csv].tempfile, 'r:GBK:UTF-8') do |csv|
+    file = File.open(params[:csv].tempfile, 'r:ISO-8859-1:GBK')
+    CSV.open(file, 'r:GBK:UTF-8') do |csv|
       header = csv.shift
       unless header[0] == '微博昵称' and header[6] == '电子邮箱'
         return redirect_to event_girls_path(params[:event_id]),
