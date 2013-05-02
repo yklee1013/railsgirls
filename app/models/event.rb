@@ -1,7 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :body, :city, :map, :starts_at, :summary, :title
-
-  has_many :participators
+  has_many :participators, :dependent => :destroy
 
   scope :upcoming, where("starts_at > #{Date.today}")
 

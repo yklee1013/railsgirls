@@ -25,7 +25,7 @@
   </tbody>
 </table>
 
-<%= form_tag import_csv_event_path(params[:event_id]), :multipart => true do %>
+<%= form_tag import_event_girls_path(params[:event_id]), :multipart => true do %>
   <%= file_field_tag :csv %>
   <%= submit_tag %>
 <% end %>
