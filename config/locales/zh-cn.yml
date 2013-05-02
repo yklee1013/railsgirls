@@ -12,6 +12,9 @@ zh-CN:
     attend:
       success: '%{name} 签到成功'
       fail: '%{name} 签到失败'
+    import:
+      success: '”%{filename}” 导入成功。'
+      fail: '“%{filename}” 不是有效地微博微活动CSV文件。'
   activerecord:
     models:
       user: '用户'
