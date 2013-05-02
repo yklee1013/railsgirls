@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   # Associations
   has_many :authentications, dependent: :destroy
 
@@ -14,10 +13,6 @@ class User < ActiveRecord::Base
   end
 
   class << self
-    def matches?(request)
-      !!request.env['rack.session'][:user_id]
-    end
-
     def from_auth(auth)
       locate_from_auth(auth) || create_from_auth(auth)
     end

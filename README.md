@@ -21,7 +21,7 @@ Run ```rails s``` to start server.
 
 Open browser ```localhost:3000/login``` to login with email ```admin@admin.com``` and password ```aaaaaa```.
 
-Now you can make anything amazing changes you want, **hope you could pull-request your valuable changes to made us better**.
+Now you can do anything you want, **hoping you can pull-request your contributes to made us better**.
 
 #License
 

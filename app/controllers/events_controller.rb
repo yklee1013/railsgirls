@@ -87,11 +87,4 @@ class EventsController < ApplicationController
     @result = Event.find(params[:id]).pair
   end
 
-  def import_csv
-    require 'csv'
-    CSV.foreach params[:csv].tempfile, encoding: 'GB2312:UTF-8' do |row|
-      puts row
-    end
-    redirect_to (session[:return_to] || root_path)
-  end
 end

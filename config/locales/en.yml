@@ -1,16 +1,43 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   date:
     formats:
       event: '%Y %b %d %A'
   nav:
-    home: Home
-    about: About
-    events: Events
-    blog: Blog
-    admin: Admin
-  slogan: Get excited and make things!
-  get_started_title: Rails Girls - Get started with tech
-  upcoming_title: Upcoming event
+    home: 'Home'
+    about: 'About'
+    events: 'Events'
+    blog: 'Blog'
+    admin: 'Admin'
+  event:
+    attend:
+      success: '%{name} attended successfully.'
+      fail: '%{name} attended unsuccessfully.'
+  activerecord:
+    models:
+      user: 'User'
+      admin: 'Administrator'
+      event: 'Event'
+      girl: 'Girl'
+      tutor: 'Tutor'
+    attributes:
+      user:
+        email: 'E-mail'
+        name: 'Name'
+        password: 'Password'
+      girl:
+        name: 'Name'
+        email: 'Email'
+        attended: 'Attended?'
+      tutor:
+        name: 'Name'
+        email: 'Email'
+        attended: 'Attended?'
+    notices:
+      template:
+        created: '%{model} created successfully.'
+        updated: '%{model} updated successfully.'
+        destroyed: '%{model} destroyed successfully.'
+
+  slogan: 'Get excited and make things!'
+  get_started_title: 'Rails Girls - Get started with tech'
+  upcoming_title: 'Upcoming event'

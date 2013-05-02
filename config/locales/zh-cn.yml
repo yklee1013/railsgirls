@@ -3,11 +3,41 @@ zh-CN:
     formats:
       event: '%Y年%b%d日 %A'
   nav:
-    home: 主页
-    about: 关于
-    events: 活动
-    blog: 博客
-    admin: 管理
-  slogan: Get excited and make things!
-  get_started_title: Rails Girls - Get started with tech
-  upcoming_title: 即将举办的活动
+    home: '主页'
+    about: '关于'
+    events: '活动'
+    blog: '博客'
+    admin: '管理'
+  event:
+    attend:
+      success: '%{name} 签到成功'
+      fail: '%{name} 签到失败'
+  activerecord:
+    models:
+      user: '用户'
+      admin: '管理员'
+      event: '活动'
+      girl: 'Girl'
+      tutor: 'Tutor'
+    attributes:
+      user:
+        email: 'E-mail'
+        name: '姓名'
+        password: '密码'
+      girl:
+        name: '名字'
+        email: '邮箱'
+        attended: '已签到？'
+      tutor:
+        name: '名字'
+        email: '邮箱'
+        attended: '已签到？'
+    notices:
+      template:
+        created: '%{model}创建成功。'
+        updated: '%{model}更新成功。'
+        destroyed: '%{model}删除成功。'
+
+  slogan: 'Get excited and make things!'
+  get_started_title: 'Rails Girls - Get started with tech'
+  upcoming_title: '即将举办的活动'
