@@ -21,7 +21,7 @@ class GirlsController < ApplicationController
   end
 
   def attend
-    g = Event.find(params[:event_id]).participators.find(params[:id])
+    g = current_event.participators.find(params[:id])
 
     if g.attend
       flash[:notice] = t('event.attend.success', :name => g.name)
