@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
   has_many :participators, :dependent => :destroy
 
-  scope :upcoming, where("starts_at > #{Date.today}")
+  scope :upcoming, where('starts_at > ?', Date.today)
 
   def tutors
     participators.where(:type => 'Tutor')
