@@ -35,7 +35,7 @@ module ApplicationHelper
     flash_messages.join("\n").html_safe
   end
 
-  def set_title(title = "", is_root = false)
+  def set_title(title = '', is_root = false)
     if is_root
       title_str = title
     else

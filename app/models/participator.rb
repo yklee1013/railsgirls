@@ -4,9 +4,9 @@ class Participator < ActiveRecord::Base
 
   belongs_to :event
 
-  scope :attendee, where(:attended => true)
-  scope :girls, where(:type => 'Girl')
-  scope :tutors, where(:type => 'Tutor')
+  scope :attendee, ->() { where(:attended => true) }
+  scope :girls, ->() { where(:type => 'Girl') }
+  scope :tutors, ->() { where(:type => 'Tutor') }
 
   def attend
     self.attended = true
