@@ -18,23 +18,6 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
-  def notice_message
-    flash_messages = []
-    flash.each do |type, message|
-      if message
-        type = :success if type == :notice
-        html = <<-HTML
-        <div class=\"alert fade in alert-#{type}\">
-          <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
-          #{message}
-        </div>
-        HTML
-        flash_messages << html
-      end
-    end
-    flash_messages.join("\n").html_safe
-  end
-
   def set_title(title = '', is_root = false)
     if is_root
       title_str = title

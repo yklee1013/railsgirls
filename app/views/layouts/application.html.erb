@@ -7,10 +7,10 @@
 
   <link rel="shortcut icon" href="/favicon.ico">
 
-  <title>Rails Girls China</title>
+  <title><%= yield :title %>Rails Girls China</title>
 
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -30,7 +30,7 @@
           <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
           <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
           <%#= content_tag :li, link_to(t('nav.about'), about_path) -%>
-          <%= content_tag :li, link_to(t('nav.admin'), admin_path) if current_user -%>
+          <%= content_tag :li, link_to(t('nav.admin'), admin_path) if current_user.admin? -%>
         </ul>
       </div>
     </div>
@@ -46,8 +46,11 @@
   <div class="container">
     <p class="slogan"><%= t(:slogan) %>
 
-    <p>2010-2013, Rails Girls China. This site is under MIT license and the source code is
-      <a href="https://github.com/railsgirls-china/railsgirls">here</a>.</p>
+    <p>
+      Rails Girls China. Follow us on <a href="http://weibo.com/railsgirls" rel="nofollow" target="_blank">Weibo</a>.
+      This site is under MIT license and the source code is
+      <a href="https://github.com/railsgirls-china/railsgirls" rel="nofollow" target="_blank">hereby</a>.
+    </p>
   </div>
 </footer>
 </body>
