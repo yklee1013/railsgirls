@@ -30,7 +30,7 @@
           <%= content_tag :li, link_to(t('nav.events'), events_path) -%>
           <%= content_tag :li, link_to(t('nav.blog'), blog_path) -%>
           <%#= content_tag :li, link_to(t('nav.about'), about_path) -%>
-          <%= content_tag :li, link_to(t('nav.admin'), admin_path) if current_user.admin? -%>
+          <%= content_tag :li, link_to(t('nav.admin'), admin_path) if logged_as_admin? -%>
         </ul>
       </div>
     </div>
