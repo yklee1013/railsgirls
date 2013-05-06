@@ -3,7 +3,10 @@
  *= require permanent_marker
  *= require caesar_dressing
  *= require_self
- */
+ *= require_tree .
+*/
+
+@import 'font-awesome';
 
 $bgColor: #D3360B;
 $containerWidth: 940px;
@@ -62,6 +65,7 @@ $containerWidth: 940px;
 }
 
 footer {
+
   margin-top: 50px;
   color: #666;
   overflow: hidden;

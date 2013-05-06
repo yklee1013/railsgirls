@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   MAX_TUTOR_HANDLE_GIRLS = 3
 
+  validates :title, :city, :starts_at, :presence => true
+
   has_many :participators, :dependent => :destroy
 
   scope :upcoming, where('starts_at > ?', Date.today)
