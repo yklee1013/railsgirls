@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :admin_required, :except => [:index, :show, :pair]
-
+  layout 'application', :except => :show
   # GET /events
   # GET /events.json
   def index

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem "font-awesome-rails"
 group :production do
   gem 'pg'
 end
