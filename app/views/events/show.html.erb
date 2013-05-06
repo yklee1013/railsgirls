@@ -29,53 +29,52 @@
 
 <div class="section black event-detail" id="section2">
   <h1><%= @event.title %></h1>
+    <div class='summary'>
+      <p>活动开始时间: <%= @event.starts_at %></p>
 
-  <div class='summary'>
-    <p>活动开始时间: <%= @event.starts_at %></p>
+      <p><%= @event.summary %></p>
+    </div>
 
-    <p><%= @event.summary %></p>
-  </div>
+    <section class='event-content'>
+      <div class='detail'><%= markdown @event.body %></div>
+    </section>
 
-  <section class='event-content'>
-    <div class='detail'><%= markdown @event.body %></div>
-  </section>
+    <%= image_tag('banner-social.png', class: 'social-banner') %>
+    <div class='social-banner-icons'>
+      <i class='icon-twitter icon-2x'></i>
+      <i class='icon-github icon-2x'></i>
+      <i class='icon-eye-open icon-2x'></i>
+    </div>
 
-  <%= image_tag('banner-social.png', class: 'social-banner') %>
-  <div class='social-banner-icons'>
-    <i class='icon-twitter icon-2x'></i>
-    <i class='icon-github icon-2x'></i>
-    <i class='icon-eye-open icon-2x'></i>
-  </div>
+    <ul class="nav">
+      <li>
+        <a href="#section1">
+          <div class='btn-bg'><i class='icon-home icon-large'></i></div>
+        </a>
+      </li>
+      <li>
+        <i class='icon-glass icon-large'></i>
+      </li>
+      <li>
+        <a href="#section3">
+          <div class='btn-bg'><i class='icon-globe icon-large'></i></div>
+        </a>
+      </li>
+      <li>
+        <a href="#section4">
+          <div class='btn-bg'><i class='icon-heart icon-large'></i></div>
+        </a>
+      </li>
+    </ul>
 
-  <ul class="nav">
-    <li>
-      <a href="#section1">
-        <div class='btn-bg'><i class='icon-home icon-large'></i></div>
-      </a>
-    </li>
-    <li>
-      <i class='icon-glass icon-large'></i>
-    </li>
-    <li>
-      <a href="#section3">
-        <div class='btn-bg'><i class='icon-globe icon-large'></i></div>
-      </a>
-    </li>
-    <li>
-      <a href="#section4">
-        <div class='btn-bg'><i class='icon-heart icon-large'></i></div>
-      </a>
-    </li>
-  </ul>
-
-
-  <div class='bubbles bubbles-s2'></div>
+    <div class='bubbles bubbles-s2'></div>
 </div>
+
 <div class="section black" id="section3">
   <h1>我们在哪里呢？Where are we?</h1>
 
   <div class='map'>
-    <%= raw @event.map %>
+    <%= image_tag(@event.map) %>
     <%= image_tag('rg2.png', class: 'rg2') %>
 
   </div>
@@ -130,13 +129,12 @@
       <i class='icon-heart icon-large'></i>
     </li>
   </ul>
-
 </div>
 
 <%= content_for :js do %>
-  <script>
-    $(function() {
-      $('ul.nav a').bind('click',function(event){
+  <script type="text/javascript">
+    $(function () {
+      $('ul.nav a').bind('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top
@@ -145,4 +143,4 @@
       });
     });
   </script>
-<% end -%>
+<% end %>
