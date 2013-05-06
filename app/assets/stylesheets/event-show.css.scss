@@ -36,7 +36,7 @@
 
 
 
-.black ul li i{
+.black>ul li i{
   
   
   position:absolute;
@@ -47,7 +47,7 @@
 
 }
 
-.black ul li a i{
+.black>ul li a i{
   
   color:rgb(240,238,226);
 
@@ -57,14 +57,14 @@
 
 
 
-.section h1{
+.section>h1{
   margin-left:50px;
   margin-top:40px;
   text-shadow:1px 1px 10px grey;
   color:rgb(211,54,11);
 }
 
-.section p{
+.section .summary>p{
   margin-left:100px;
   
 }
@@ -96,7 +96,7 @@
   font-size:40px;
 }
 
-.black ul li{
+.black>ul>li{
     float:left;
     padding:5px;
     margin:30px;
@@ -180,7 +180,7 @@
 .event-content{
   
   background:url(wrinklepaper.png) repeat;
-  padding-left:10px;
+  padding-left:30px;
   padding-bottom:30px;
   width:800px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 20px 0;
