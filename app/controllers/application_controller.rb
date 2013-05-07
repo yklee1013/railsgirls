@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :logged_as_admin?
 
   def store_location
     session[:return_to] = request.original_url
   end
 
-  def unauthorized!(admin = false)
+  def unauthorized!
     session[:return_to] = url_for(params) if !request.xhr?
     redirect_to login_path
   end
@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+
+  def logged_as_admin?
+    !!current_user and current_user.admin?
   end
 
   def admin_required

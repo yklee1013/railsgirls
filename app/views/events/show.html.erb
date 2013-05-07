@@ -1,156 +1,145 @@
+<div class="section black" id="section1">
+  <%= image_tag('rg-home.png', class: 'rg-home') %>
+  <ul class="nav">
+    <li>
+      <i class='icon-home icon-large'></i>
+    </li>
+    <li>
+      <a href="#section2">
+        <div class='btn-bg'><i class='icon-glass icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section3">
+        <div class='btn-bg'><i class='icon-globe icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section4">
+        <div class='btn-bg'><i class='icon-heart icon-large'></i></div>
+      </a>
+    </li>
+  </ul>
 
-  <div class="section black" id="section1">
-    
-     <%= image_tag('rg-home.png',class:'rg-home')%>
-     
-      <ul class="nav">
-          <li>
-            <i class ='icon-home icon-large'></i>
-            
-          </li>
-          <li>
-            <a href="#section2">
-            <div class='btn-bg'><i class='icon-glass icon-large'></i></div>
-            </a>
-          </li>
-          <li>
-            <a href="#section3">
-              <div class='btn-bg'><i class = 'icon-globe icon-large'></i></div>
-            </a>
-          </li>  
-          <li>
-            <a href="#section4">
-              <div class='btn-bg'><i class = 'icon-heart icon-large'></i></div>
-            </a>
-          </li>       
-      </ul>
+  <div class='bubbles'></div>
+</div>
 
-      
-      
-      <div class='bubbles'></div>
-      
+<div class="section black event-detail" id="section2">
+  <h1><%= @event.title %></h1>
 
+  <div class='summary'>
+    <p>活动开始时间: <%= @event.starts_at %></p>
+
+    <p><%= @event.summary %></p>
   </div>
-  
-  <div class="section black event-detail" id="section2">
-    <h1><%= @event.title %></h2>
-      <div class = 'summary'>
-        <p>活动开始时间: <%= @event.starts_at %></p>
-        <p><%= @event.summary %></p>
-      </div>  
-    
-    <section class = 'event-content'>
-      <div class='detail'><%= markdown @event.body %></div>
-    </section>
-    
-    <div class = 's-banner-container'>
-      <%= image_tag('banner-social.png',class:'social-banner')%>
-      <div class='social-banner-icons'>
-          <i class='icon-twitter icon-2x'></i>
-          <i class='icon-github icon-2x'></i>
-          <i class='icon-eye-open icon-2x'></i>     
-      </div>
+
+  <section class='event-content'>
+    <div class='detail'><%= markdown @event.body %></div>
+  </section>
+
+  <div class='s-banner-container'>
+    <%= image_tag('banner-social.png', class: 'social-banner') %>
+    <div class='social-banner-icons'>
+      <i class='icon-twitter icon-2x'></i>
+      <i class='icon-github icon-2x'></i>
+      <i class='icon-eye-open icon-2x'></i>
     </div>
-    
-    
-    <ul class="nav">
-        <li>
-          <a href="#section1">
-          <div class='btn-bg'><i class ='icon-home icon-large'></i></div>
-          </a>
-        </li>
-        <li>
-          <i class='icon-glass icon-large'></i>
-        </li>
-        <li>
-          <a href="#section3">
-            <div class='btn-bg'><i class = 'icon-globe icon-large'></i></div>
-          </a>
-        </li> 
-        <li>
-          <a href="#section4">
-            <div class='btn-bg'><i class = 'icon-heart icon-large'></i></div>
-          </a>
-        </li>        
-    </ul>
-      
-      
-    
-    <div class='bubbles bubbles-s2'></div>
-  </div>
-  <div class="section black" id="section3">
-      <h1>我们在哪里呢？Where are we?</h1>
-      <div class='map'>
-        <%= image_tag(@event.map)%>
-        <%= image_tag('rg2.png',class:'rg2')%>
-        
-      </div>
-      <ul class="nav">
-          <li>
-            <a href="#section1">
-            <div class='btn-bg'><i class ='icon-home icon-large'></i></div>
-            </a>
-          </li>
-          <li>
-            <a href="#section2">
-              <div class='btn-bg'><i class='icon-glass icon-large'></i></div>   
-            </a>
-          </li>
-          <li>
-            <i class = 'icon-globe icon-large'></i>
-          </li>      
-          <li>
-            <a href="#section4">
-              <div class='btn-bg'><i class = 'icon-heart icon-large'></i></div>
-            </a>
-          </li>   
-      </ul>
-      <div class='bubbles bubbles-s3'></div>
   </div>
 
+  <ul class="nav">
+    <li>
+      <a href="#section1">
+        <div class='btn-bg'><i class='icon-home icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <i class='icon-glass icon-large'></i>
+    </li>
+    <li>
+      <a href="#section3">
+        <div class='btn-bg'><i class='icon-globe icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section4">
+        <div class='btn-bg'><i class='icon-heart icon-large'></i></div>
+      </a>
+    </li>
+  </ul>
 
-  <div class="section black" id="section4">
-    
-     <h1>配对是谁？ So who's your pair?</h1>
-     <div class='pair'>
-       <a href='<%= pair_event_path(@event) %>'><%=image_tag('rg-ruby.png')%>
-     </div>
-      <ul class="nav">
-          <li>
-            <a href="#section1">
-              <div class='btn-bg'><i class ='icon-home icon-large'></i></div>
-            </a>
-          </li>
-          <li>
-            <a href="#section2">
-            <div class='btn-bg'><i class='icon-glass icon-large'></i></div>
-            </a>
-          </li>
-          <li>
-            <a href="#section3">
-              <div class='btn-bg'><i class = 'icon-globe icon-large'></i></div>
-            </a>
-          </li>      
-          <li>
-              <i class = 'icon-heart icon-large'></i>
-          </li>      
-      </ul>
+  <div class='bubbles bubbles-s2'></div>
+</div>
+<div class="section black" id="section3">
+  <h1>我们在哪里呢？Where are we?</h1>
 
-      
-      
-      
+  <div class='map'>
+    <%= image_tag(@event.map) %>
+    <%= image_tag('rg2.png', class: 'rg2') %>
 
   </div>
-  
+  <ul class="nav">
+    <li>
+      <a href="#section1">
+        <div class='btn-bg'><i class='icon-home icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section2">
+        <div class='btn-bg'><i class='icon-glass icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <i class='icon-globe icon-large'></i>
+    </li>
+    <li>
+      <a href="#section4">
+        <div class='btn-bg'><i class='icon-heart icon-large'></i></div>
+      </a>
+    </li>
+  </ul>
+  <div class='bubbles bubbles-s3'></div>
+</div>
 
-<script type="text/javascript">
-    $(function() {
-        $('ul.nav a').bind('click',function(event){
-            var $anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 2500);
-            event.preventDefault();
-        });
+<div class="section black" id="section4">
+  <h1>配对是谁？ So who's your pair?</h1>
+
+  <div class='pair'>
+    <%= link_to pair_event_path(@event) do %>
+      <%= image_tag('rg-ruby.png') %>
+    <% end -%>
+  </div>
+  <ul class="nav">
+    <li>
+      <a href="#section1">
+        <div class='btn-bg'><i class='icon-home icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section2">
+        <div class='btn-bg'><i class='icon-glass icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section3">
+        <div class='btn-bg'><i class='icon-globe icon-large'></i></div>
+      </a>
+    </li>
+    <li>
+      <i class='icon-heart icon-large'></i>
+    </li>
+  </ul>
+</div>
+
+<%= content_for :js do %>
+  <script type="text/javascript">
+    $(function () {
+      $('ul.nav a').bind('click', function (event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 2500);
+        event.preventDefault();
+      });
     });
-</script>
+  </script>
+<% end -%>

@@ -1,7 +1,11 @@
 class Event < ActiveRecord::Base
+  MAX_TUTOR_HANDLE_GIRLS = 3
+
+  validates :title, :city, :starts_at, :presence => true
+
   has_many :participators, :dependent => :destroy
 
-  scope :upcoming, where("starts_at > #{Date.today}")
+  scope :upcoming, where('starts_at > ?', Date.today)
 
   def tutors
     participators.where(:type => 'Tutor')
@@ -12,14 +16,13 @@ class Event < ActiveRecord::Base
   end
 
   def pair
-    members = participators.has_attended
+    members = participators.attendee
 
-    tutors = members.where(:type => 'Tutor').shuffle
-    girls = members.where(:type => 'Girl').shuffle
+    tutors = members.tutors.shuffle
+    girls = members.girls.shuffle
     return {} if  tutors.size * girls.size == 0
 
     t_g_ratio = (girls.size / tutors.size).to_i
-    # puts "girls: #{girls.size} tutors: #{tutors.size} t_g_ratio: #{t_g_ratio}"
 
     result = {}
 
@@ -32,7 +35,7 @@ class Event < ActiveRecord::Base
     end
 
     result.each_value do |r|
-      (3 - r.size).times { r<< '' } if r.size < 3
+      (MAX_TUTOR_HANDLE_GIRLS - r.size).times { r<< '' } if r.size < MAX_TUTOR_HANDLE_GIRLS
     end
 
     result
