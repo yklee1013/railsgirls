@@ -12,6 +12,9 @@ en:
     attend:
       success: '%{name} attended successfully.'
       fail: '%{name} attended unsuccessfully.'
+    import:
+      success: '"%{filename}" imported successfully'
+      fail: '"%{filename}" is not a valid Weibo event CSV file.'
   activerecord:
     models:
       user: 'User'
